@@ -1,0 +1,22 @@
+.skillshelf-container {
+    background-image: url('/assets/skills_bookshelf.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+  }
+  
+  .clickable-area {
+    position: absolute;
+    cursor: pointer;
+  }
+
+  .next-section {
+    top: 75%;
+    right: 2%;
+    width: 10%;
+    height: 25%;
+    border: 1px solid red;
+  }
