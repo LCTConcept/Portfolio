@@ -24,10 +24,11 @@
     border: 1px solid red;
   }
 
-  .contact-guide {
+  .guide-download {
     bottom: 5%;
     left: 26%;
     width: 7%;
     height: 15%;
     border: 1px solid rgb(53, 170, 49);
   }
+
