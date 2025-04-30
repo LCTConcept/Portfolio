@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 
 import Home from "./pages/Home";
 import Experiences from "./pages/Experiences";
-import ExperienceBook from "./pages/ExperienceBook";
+import ExperienceBookReact from "./components/ExperienceBookReact";
 import Skills from "./pages/Skills";
 import Skillsshelf from "./pages/Skillsshelf";
 import Projects from "./pages/Projects";
@@ -21,7 +21,7 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/experiences" element={<Experiences />} />
-        <Route path="/experiencebook" element={<ExperienceBook />} />
+        <Route path="/experiencebook" element={<ExperienceBookReact />} />
         <Route path="/skills" element={<Skills />} />
         <Route path="/skillsshelf" element={<Skillsshelf />} />
         <Route path="/projects" element={<Projects />} />
