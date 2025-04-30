@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
+import TypewriterText from "../components/TypewriterText";
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -11,15 +12,23 @@ const Home: React.FC = () => {
 
   return (
     <div className="home-container">
-      <div
-        className="clickable-area experiences"
-        onClick={() => goToPage("/experiences")}
-      />
-
-      {/* Image ajoutée : par exemple un avatar ou une mascotte */}
-      <div className="andarna-avatar">
-        <img src="/assets/Andarna_flyingright.png" alt="Andarna Avatar" />
+      {/* Bulle détachée, au même niveau que l'avatar */}
+      <div className="andarna-wrapper">
+        <div className="speech-bubble">
+          <TypewriterText
+            text="Hi there ! I’m Andarna.
+Ready for the tour ?
+Let’s start in the Room of Experiences.
+Click on the stairs and I’ll follow you."
+            speed={30}
+          />
+        </div>
+        <div className="andarna-avatar">
+          <img src="/assets/Andarna_flyingright.png" alt="Andarna Avatar" />
+        </div>
       </div>
+
+      <div className="experiences" onClick={() => goToPage("/experiences")} />
     </div>
   );
 };

@@ -1,0 +1,38 @@
+.custom-navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 20px 40px;
+
+  background: rgba(0, 0, 0, 0.2); /* fond semi-transparent */
+  backdrop-filter: blur(10px);           /* effet de flou */
+  -webkit-backdrop-filter: blur(10px);   /* support Safari */
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* petite ligne de séparation */
+}
+  
+  .custom-navbar ul {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .custom-navbar li a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-family: 'Oldenburg', cursive; 
+    padding: 10px 20px;
+    transition: opacity 0.2s ease;
+  }
+  
+  .custom-navbar li a:hover {
+    opacity: 0.8;
+  }
+  
