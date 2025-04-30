@@ -1,18 +1,25 @@
+//Import setup
 import React, { useRef } from "react";
 import HTMLFlipBook from "react-pageflip";
+
+// Import content (pages) and CSS styles
+import { experiencePages } from "../content/experiencePages";
 import "./ExperienceBookReact.css";
 
+// Functional component for the Experience Book :
+// This component uses the HTMLFlipBook library to create a flipbook effect for the experience pages
 const ExperienceBookReact: React.FC = () => {
   const bookRef = useRef<any>(null);
 
   const handleFlipNext = () => {
-    bookRef.current.pageFlip().flipNext("bottom"); // ← effet visuel en coin bas
+    bookRef.current.pageFlip().flipNext("bottom"); // Flip to the next page with corner animation
   };
 
   const handleFlipPrev = () => {
-    bookRef.current.pageFlip().flipPrev("bottom");
+    bookRef.current.pageFlip().flipPrev("bottom"); // Flip to the previous page with corner animation
   };
 
+  //Functions will be used later to add more features (sounds...)
   const handleFlip = (e: any) => {
     console.log("Page flipped to:", e.data); // index de la page actuelle
   };
@@ -21,11 +28,12 @@ const ExperienceBookReact: React.FC = () => {
     console.log("State changed:", e.data); // "user_fold", "flipping", etc.
   };
 
+  // Use of HTMLFlipBook to create the book and insert the pages
   return (
     <div className="book-wrapper">
       <HTMLFlipBook
-        style={{}}
-        startPage={0}
+        style={{}} // Mandatory to avoid a warning in the console
+        startPage={0} // Start on the first page
         width={800}
         height={800}
         size="fixed"
@@ -34,9 +42,9 @@ const ExperienceBookReact: React.FC = () => {
         minHeight={400}
         maxHeight={1536}
         maxShadowOpacity={0.5}
-        showCover={true}
+        showCover={true} // First and last pages are covers
         mobileScrollSupport={true}
-        flippingTime={1000}
+        flippingTime={1000} // Page flip duration in milliseconds
         drawShadow={true}
         usePortrait={false}
         startZIndex={0}
@@ -44,47 +52,33 @@ const ExperienceBookReact: React.FC = () => {
         clickEventForward={true}
         useMouseEvents={true}
         swipeDistance={30}
-        showPageCorners={true}
-        disableFlipByClick={false}
+        showPageCorners={true} // Show flipable corners
+        disableFlipByClick={false} // Allow clicking to flip pages
         className="demo-book"
+        ref={bookRef} // Reference to the book for programmatic control
       >
-        {/* Front Cover Page */}
-        <div className="w-full h-full relative" data-density="hard">
-          <img
-            src="/1.png"
-            alt="Back Cover"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-        </div>
-
-        {/* Inner Pages */}
-        {[1, 2, 3, 4, 5].map((page) => (
-          <div
-            key={page}
-            className="bg-white border border-gray-300 text-xl w-full h-full text-black p-6"
-          >
-            <div className="flex flex-col justify-center h-full">
-              <p className="text-justify">
-                <strong>Page {page}:</strong> Im a paragraph. Click here to add
-                your own text and edit me. It’s easy. Just click “Edit Text” or
-                double click me to add your own content and make changes to the
-                font. This is a great space to write a long text about your
-                company and your services. You can use this space to go into a
-                little more detail about your company. Talk about your team and
-                what services you provide.
-              </p>
+        {/* Map of all the pages */}
+        {experiencePages.map((page) => (
+          <div key={page.id} className="page">
+            <div className="page-img">
+              {page.image && <img src={page.image} alt={`Page ${page.id}`} />}
+              {page.title && <h2>{page.title}</h2>}
+              {page.text && <p className="text-justify">{page.text}</p>}
+              {page.custom && page.custom}
             </div>
           </div>
         ))}
-        {/* Blank page before back cover */}
-        <div className="bg-white border border-gray-300 w-full h-full" />
-        {/* Back Cover Page */}
-        <div className="w-full h-full relative" data-density="hard">
-          <img
-            src="/2.png"
-            alt="Back Cover"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
+
+        {/* Blank page to complete a spread */}
+        <div className="page" />
+
+        {/* Back cover page */}
+        <div
+          className="page cursor-pointer"
+          data-density="hard"
+          onClick={() => (window.location.href = "/skills")}
+        >
+          <p>📘 Aller à la section suivante : Skills</p>
         </div>
       </HTMLFlipBook>
     </div>

@@ -15,6 +15,11 @@ const Home: React.FC = () => {
         className="clickable-area experiences"
         onClick={() => goToPage("/experiences")}
       />
+
+      {/* Image ajoutée : par exemple un avatar ou une mascotte */}
+      <div className="andarna-avatar">
+        <img src="/assets/Andarna_flyingright.png" alt="Andarna Avatar" />
+      </div>
     </div>
   );
 };
