@@ -12,15 +12,14 @@ const Home: React.FC = () => {
 
   return (
     <div className="home-container">
-      {/* Bulle détachée, au même niveau que l'avatar */}
       <div className="andarna-wrapper">
         <div className="speech-bubble">
           <TypewriterText
-            text="Hi there ! I’m Andarna.
-Ready for the tour ?
+            text="Hi there ! I’m Andarna. 
+Ready for the tour of Léa's library ? 
 Let’s start in the Room of Experiences.
 Click on the stairs and I’ll follow you."
-            speed={30}
+            speed={40}
           />
         </div>
         <div className="andarna-avatar">

@@ -7,7 +7,7 @@ const Navbar: React.FC = () => {
     <nav className="custom-navbar">
       <ul>
         <li>
-          <Link to="/">Lobby</Link>
+          <Link to="/">Welcome</Link>
         </li>
         <li>
           <Link to="/experiences">Room of Experiences</Link>
