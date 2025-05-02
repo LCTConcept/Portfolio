@@ -1,58 +1,77 @@
-/* Base style pour tous les blocs */
+/* Common styles */
 .page-text-block {
     font-family: 'Quintessential', cursive;
-    font-size: 1.5rem;
     color: #1a1a1a;
     padding: 1rem;
-    line-height: 1.4;
+
   }
 
   .page h2 {
-    font-family: 'Macondo Swash Caps', cursive;
+    font-family: 'Quintessential', cursive;
     font-size: 3rem;
     margin-bottom: 0.75rem;
     text-align: center;
   }
-   
-  .text-center {
-    text-align: center;
+
+  .text-fullpage {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);
-  }
-  
-  .text-justify {
+    top: 55%;
+    left: 49%;
+    transform: translate(-50%, -50%); 
+    width: 100%; 
+    max-width: 750px;  
     text-align: justify;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    font-size: 1.3rem;
+    line-height: 1.5;
     text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);
-  }
-  
-  .text-bottom {
-    position: absolute;
-    bottom: 5%;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-  }
-  
-  .large-text {
-    font-size: 2rem;
-  }
-  
-  .small-fade {
-    font-size: 1.1rem;
-    opacity: 0.7;
-  }
-  
-  .prologue-img-right {
-    float: right;
-    width: 40%;
-    margin-left: 30px;
+    font-family: 'Lora', serif;
 
   }
+   
+  .text-quotation {
+    text-align: center;
+    font-family: 'Quintessential', cursive;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    width: 100%; 
+    max-width: 800px;  
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);
+  }
   
+  .text-quotesource {
+    font-family: 'Lora', serif;
+    color: #1a1a1a;
+    padding: 1.1rem;
+    position: absolute;
+    top: 60%;
+    left: 70%;
+    transform: translate(-50%, -50%); 
+    width: 80%; 
+  }
+  
+  
+  /*PAGES BY PAGES STYLES*/
+
+  .prologue-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    filter: sepia(0.4) contrast(0.9) brightness(1.05);
+  }
+
+.questreport-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  max-width: 900px;
+  filter: sepia(0.4) contrast(0.9) brightness(1.05);
+}
